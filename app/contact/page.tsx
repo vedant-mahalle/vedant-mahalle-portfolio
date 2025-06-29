@@ -11,6 +11,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail, Phone, MapPin, Clock, Send, Github, Linkedin, Twitter, Code } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+import { Navbar } from "@/components/navbar"
+
+function logFormData(formData: any) {
+  console.log("Form submitted with data:", formData)
+}
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -21,11 +26,26 @@ export default function ContactPage() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    // You can integrate with email services like EmailJS, Resend, etc.
+    logFormData(formData)
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+      const data = await res.json()
+      console.log("API response:", data)
+      if (data.success) {
+        alert("Message sent successfully!")
+        setFormData({ name: "", email: "", subject: "", projectType: "", message: "" })
+      } else {
+        alert("Failed to send message: " + (data.error || "Unknown error"))
+      }
+    } catch (error) {
+      alert("Failed to send message: " + (error instanceof Error ? error.message : error))
+    }
   }
 
   const handleChange = (field: string, value: string) => {
@@ -34,6 +54,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen pt-20 pb-16">
+      <Navbar/>
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
@@ -223,57 +244,6 @@ export default function ContactPage() {
                     <Link href="/about">About Me</Link>
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="mt-20">
-          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">What's your typical project timeline?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Project timelines vary based on complexity. Simple websites take 2-4 weeks, while complex applications
-                  can take 2-6 months. I'll provide a detailed timeline after our initial discussion.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Do you work with international clients?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  I work with clients worldwide and am comfortable with different time zones. I use modern communication
-                  tools to ensure smooth collaboration regardless of location.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">What technologies do you specialize in?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  I specialize in React, Next.js, Node.js, Python, and various ML frameworks. I'm always learning new
-                  technologies to provide the best solutions for each project.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Do you provide ongoing support?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Yes! I offer maintenance and support packages to keep your applications running smoothly. This
-                  includes updates, bug fixes, and feature enhancements as needed.
-                </p>
               </CardContent>
             </Card>
           </div>

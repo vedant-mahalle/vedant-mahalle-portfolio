@@ -3,11 +3,14 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Code, Brain, Database, Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-
+import { Avatar } from "@radix-ui/react-avatar"
+import boy from "@/public/image copy.png"
+import { Navbar } from "@/components/navbar"
 export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
+      <Navbar/>
       <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/20 pt-20 pb-16 animate-fade-in">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container mx-auto px-4 relative">
@@ -46,7 +49,7 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="group">
-                  <Link href="/projects">
+                  <Link href="/portfolio">
                     View My Work
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -77,13 +80,17 @@ export default function HomePage() {
 
             <div className="relative">
               <div className="relative w-full max-w-md mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 dark:from-blue-500 dark:via-blue-600 dark:to-blue-700 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+                <div className="absolute inset-0  blur-3xl opacity-20 animate-pulse"></div>
                 <Image
-                  src="https://avatars.githubusercontent.com/u/151418599?v=4?height=400&width=400"
+                  // src="https://avatars.githubusercontent.com/u/151418599?v=4?height=400&width=400"
+                  // src="https://plus.unsplash.com/premium_photo-1739580360043-f2c498c1d861?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RW5naW4lMjBib3klMjBhbmltYXRlZHxlbnwwfHwwfHx8MA%3D%3D"
+                  // src="https://plus.unsplash.com/premium_photo-1740105309652-b5c1f52953cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI1fHx8ZW58MHx8fHx8"
+                  // src={boy}
+                  src="https://images.unsplash.com/photo-1577100078641-e92b0a906760?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym95JTIwbGFwdG9wfGVufDB8fDB8fHww"
                   alt="Profile"
                   width={400}
                   height={400}
-                  className="relative z-10 rounded-full border-4 border-background shadow-2xl"
+                  className="relative z-10 rounded-2xl border-4 border-background shadow-2xl"
                 />
               </div>
             </div>

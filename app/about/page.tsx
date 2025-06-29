@@ -7,16 +7,22 @@ import { Award, BookOpen, Code, Download, MapPin, Calendar } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import avatard from '@/public/avatar_dark.png'
+import { Navbar } from "@/components/navbar"
+import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiPython, SiNodedotjs, SiMongodb, SiAmazon, SiC, SiCplusplus, SiLinux, SiVercel } from "react-icons/si"
 
 const skills = [
-  { name: "JavaScript/TypeScript", level: 95 },
-  { name: "React/Next.js", level: 90 },
-  { name: "Python", level: 88 },
-  { name: "Node.js", level: 85 },
-  { name: "Machine Learning", level: 82 },
-  { name: "Data Structures & Algorithms", level: 90 },
-  { name: "SQL/NoSQL", level: 80 },
-  { name: "Cloud Platforms (AWS/Vercel)", level: 75 },
+  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
+  { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
+  { name: "React", icon: <SiReact className="text-cyan-400" /> },
+  { name: "Next.js", icon: <SiNextdotjs className="text-black dark:text-white" /> },
+  { name: "Python", icon: <SiPython className="text-yellow-500" /> },
+  { name: "Node.js", icon: <SiNodedotjs className="text-green-600" /> },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+  { name: "Amazon Web Services", icon: <SiAmazon className="text-orange-400" /> },
+  { name: "C", icon: <SiC className="text-blue-700" /> },
+  { name: "C++", icon: <SiCplusplus className="text-blue-500" /> },
+  { name: "Linux", icon: <SiLinux className="text-black dark:text-white" /> },
+  { name: "Vercel", icon: <SiVercel className="text-black dark:text-white" /> },
 ]
 
 const experience = [
@@ -96,6 +102,7 @@ const DownloadCV = () => {
 export default function AboutPage() {
   return (
     <div className="min-h-screen pt-20 pb-16">
+      <Navbar/>
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="grid lg:grid-cols-3 gap-12 mb-16">
@@ -172,14 +179,11 @@ export default function AboutPage() {
         {/* Skills */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8">Technical Skills</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-4 gap-6">
             {skills.map((skill) => (
-              <div key={skill.name} className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="font-medium">{skill.name}</span>
-                  <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                </div>
-                <Progress value={skill.level} className="h-2" />
+              <div key={skill.name} className="flex items-center gap-3">
+                <span className="text-2xl">{skill.icon}</span>
+                <span className="font-medium">{skill.name}</span>
               </div>
             ))}
           </div>
