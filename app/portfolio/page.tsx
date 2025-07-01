@@ -54,7 +54,7 @@ const portfolioItems = [
     image: "https://placehold.co/600x400/2563eb/ffffff?text=Food+Recommendation",
     tags: ["Python", "Flask", "Machine Learning", "CSV Data Processing", "BMI Analysis"],
     githubUrl: "https://github.com/vedant-mahalle/foodrecomendation",
-    liveUrl: "https://github.com/vedant-mahalle/foodrecomendation",
+    liveUrl: "https://nutriplan-623r.onrender.com/",
     category: "Machine Learning",
     type: "Hobby",
   },
@@ -213,7 +213,7 @@ export default function PortfolioPage() {
               <div className="text-sm text-muted-foreground">GitHub Commits</div>
             </div>
             <div className="animate-bounce-in animation-delay-600">
-              <div className="text-3xl font-bold text-purple-500 mb-2">300+</div>
+              <div className="text-3xl font-bold text-purple-500 mb-2">100+</div>
               <div className="text-sm text-muted-foreground">Problems Solved</div>
             </div>
             <div className="animate-bounce-in animation-delay-800">

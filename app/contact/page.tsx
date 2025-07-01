@@ -237,9 +237,9 @@ export default function ContactPage() {
                   <Button variant="ghost" asChild className="justify-start">
                     <Link href="/portfolio">View Portfolio</Link>
                   </Button>
-                  <Button variant="ghost" asChild className="justify-start">
+                  {/* <Button variant="ghost" asChild className="justify-start">
                     <Link href="/projects">Browse Projects</Link>
-                  </Button>
+                  </Button> */}
                   <Button variant="ghost" asChild className="justify-start">
                     <Link href="/about">About Me</Link>
                   </Button>

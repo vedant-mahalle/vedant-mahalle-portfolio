@@ -132,7 +132,23 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold mb-4">DSA & Problem Solving</h3>
               <p className="text-muted-foreground mb-6">
-                Passionate about algorithmic problem solving with 500+ problems solved across various platforms.
+                Passionate about algorithmic problem solving .
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="outline">LeetCode</Badge>
+                <Badge variant="outline">Algorithms</Badge>
+                <Badge variant="outline">System Design</Badge>
+                <Badge variant="outline">Optimization</Badge>
+              </div>
+            </div>
+
+            <div className="group p-8 rounded-2xl bg-background border hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Database className="w-6 h-6 text-green-500" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Gen AI</h3>
+              <p className="text-muted-foreground mb-6">
+                Passionate about algorithmic problem solving .
               </p>
               <div className="flex flex-wrap gap-2">
                 <Badge variant="outline">LeetCode</Badge>

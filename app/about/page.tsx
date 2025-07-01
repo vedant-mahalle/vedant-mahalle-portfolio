@@ -35,22 +35,22 @@ const experience = [
       "Pursuing Bachelor's in Computer Science with focus on Data Structures, Algorithms, Web Development, and Machine Learning. Maintaining excellent academic performance while working on practical projects.",
     technologies: ["C++", "Python", "JavaScript", "React", "Node.js"],
   },
-  {
-    title: "Full Stack Development Intern",
-    company: "Tech Startup",
-    period: "Summer 2024",
-    location: "Remote",
-    description:
-      "Developed responsive web applications using React and Node.js. Collaborated with senior developers to implement new features and optimize existing codebase.",
-    technologies: ["React", "Node.js", "MongoDB", "Express.js"],
-  },
+  // {
+  //   title: "Full Stack Development Intern",
+  //   company: "Tech Startup",
+  //   period: "Summer 2024",
+  //   location: "Remote",
+  //   description:
+  //     "Developed responsive web applications using React and Node.js. Collaborated with senior developers to implement new features and optimize existing codebase.",
+  //   technologies: ["React", "Node.js", "MongoDB", "Express.js"],
+  // },
   {
     title: "Freelance Web Developer",
-    company: "Vihtai-Enterprises",
-    period: "2023 - Present",
+    company: "Swaravishkar",
+    period: "June 2025",
     location: "Pune, Maharashtra",
     description:
-      "Developed a responsive business website for Vithai Enterprise in Loni Kalbhor, Pune, using React.js for the frontend and Node.js for backend functionality. Collaborated with senior developers to implement key features, optimize performance, and ensure seamless user experience across devices.",
+      "Developed a responsive business website for Swaravishkar a Karaoke Club, Akola, using Next.js for the frontend . Collaborated with senior developers to implement key features, optimize performance, and ensure seamless user experience across devices.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
   },
 ]
@@ -183,7 +183,7 @@ export default function AboutPage() {
             {skills.map((skill) => (
               <div key={skill.name} className="flex items-center gap-3">
                 <span className="text-2xl">{skill.icon}</span>
-                <span className="font-medium">{skill.name}</span>
+                  <span className="font-medium">{skill.name}</span>
               </div>
             ))}
           </div>
