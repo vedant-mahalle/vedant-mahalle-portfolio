@@ -61,15 +61,16 @@ const portfolioItems = [
     category: "DSA & Algorithms",
     type: "Hobby",
   },
-  // {
-  //   title: "Code Editor",
-  //   description: "Browser-based code editor with syntax highlighting, auto-completion, and live preview.",
-  //   image: "/placeholder.svg?height=300&width=400",
-  //   tags: ["React", "Monaco Editor", "WebSockets", "Docker"],
-  //   liveUrl: "0.0.0.0",
-  //   githubUrl: "#",
-  //   category: "Web Development",
-  // },
+  {
+    title: "Talknitive",
+    description: "Online meeting Platform With AI Feature  ",
+    image: "/placeholder.svg?height=300&width=400",
+    tags: ["React", "MongoDB", "WebSockets", "WebRTC",],
+    liveUrl: "https://talknitive.vercel.app/",
+    githubUrl: "https://github.com/vedant-mahalle/Talknitive",
+    category: "Web Development",
+    type: "Hobby"
+  },
 ]
 
 const categories = ["All", "Web Development", "Machine Learning", "Gen AI", "DSA"]
@@ -202,6 +203,9 @@ export default function PortfolioPage() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <Badge variant="secondary">{item.category}</Badge>
+                  {item.title === "Talknitive" && (
+                    <Badge className="ml-2 bg-yellow-400 text-black animate-pulse" variant="outline">Under Work</Badge>
+                  )}
                 </div>
                 <CardTitle className="text-xl">{item.title}</CardTitle>
                 <CardDescription>{item.description}</CardDescription>
