@@ -6,11 +6,15 @@ import Image from "next/image"
 import { Avatar } from "@radix-ui/react-avatar"
 import boy from "@/public/image copy.png"
 import { Navbar } from "@/components/navbar"
+import { GiArtificialIntelligence } from "react-icons/gi"
+import GitHubCalendar from 'react-github-calendar'
+import ContributionCalendar from "@/components/github-calendar"
+
 export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <Navbar/>
+      <Navbar />
       <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/20 pt-20 pb-16 animate-fade-in">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container mx-auto px-4 relative">
@@ -40,6 +44,10 @@ export default function HomePage() {
                 <Badge variant="secondary" className="flex items-center gap-2">
                   <Database className="w-4 h-4" />
                   Data Structures & Algorithms
+                </Badge>
+                <Badge variant="secondary" className="flex items-center gap-2">
+                  <GiArtificialIntelligence className="w-4 h-4" />
+                  Gen AI
                 </Badge>
                 <Badge variant="secondary" className="flex items-center gap-2">
                   <Brain className="w-4 h-4" />
@@ -82,15 +90,20 @@ export default function HomePage() {
               <div className="relative w-full max-w-md mx-auto">
                 <div className="absolute inset-0  blur-3xl opacity-20 animate-pulse"></div>
                 <Image
-                  // src="https://avatars.githubusercontent.com/u/151418599?v=4?height=400&width=400"
-                  // src="https://plus.unsplash.com/premium_photo-1739580360043-f2c498c1d861?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RW5naW4lMjBib3klMjBhbmltYXRlZHxlbnwwfHwwfHx8MA%3D%3D"
-                  // src="https://plus.unsplash.com/premium_photo-1740105309652-b5c1f52953cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI1fHx8ZW58MHx8fHx8"
-                  // src={boy}
                   src="https://images.unsplash.com/photo-1577100078641-e92b0a906760?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym95JTIwbGFwdG9wfGVufDB8fDB8fHww"
                   alt="Profile"
                   width={400}
                   height={400}
                   className="relative z-10 rounded-2xl border-4 border-background shadow-2xl"
+                />
+                
+                <Image
+                  src="https://github-readme-streak-stats.herokuapp.com?user=vedant-mahalle&theme=tokyonight"
+                  alt="GitHub Streak"
+                  width={400}
+                  height={200}
+                  className="rounded-xl border-2 border-border shadow-2xl bg-background"
+                  unoptimized
                 />
               </div>
             </div>
@@ -144,17 +157,19 @@ export default function HomePage() {
 
             <div className="group p-8 rounded-2xl bg-background border hover:shadow-lg transition-all duration-300">
               <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Database className="w-6 h-6 text-green-500" />
+                <GiArtificialIntelligence className="w-6 h-6 text-green-500" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Gen AI</h3>
               <p className="text-muted-foreground mb-6">
-                Passionate about algorithmic problem solving .
+                Exploring the frontiers of Generative AI—building intelligent systems that create, understand, and transform content. Experienced with LLMs, prompt engineering, and deploying AI-powered applications.
               </p>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">LeetCode</Badge>
-                <Badge variant="outline">Algorithms</Badge>
-                <Badge variant="outline">System Design</Badge>
-                <Badge variant="outline">Optimization</Badge>
+                <Badge variant="outline">LLMs</Badge>
+                <Badge variant="outline">Prompt Engineering</Badge>
+                <Badge variant="outline">LangChain</Badge>
+                <Badge variant="outline">OpenAI API</Badge>
+                <Badge variant="outline">HuggingFace</Badge>
+                <Badge variant="outline">Vector Databases</Badge>
               </div>
             </div>
 

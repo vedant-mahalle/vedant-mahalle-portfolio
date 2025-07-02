@@ -1,4 +1,5 @@
 "use client"
+import ContributionCalendar from "@/components/github-calendar"
 import { Navbar } from "@/components/navbar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -12,7 +13,7 @@ const portfolioItems = [
   {
     title: "Kariok Club",
     description:
-      "A dynamic dashboard application built with Next.js that empowers administrators to control and customize the frontend experience in real time. Features include modular analytics, user management, and seamless integration for live updates.",
+      "A dynamic dashboard application built with Next.js for Swaravishkar Kariok Club in Akola, enabling administrators to control and customize the frontend experience in real time. Features include modular analytics, user management, and seamless integration for live updates, tailored specifically for the company's needs. (Sponsored Project)",
     image: "/placeholder.svg?height=250&width=400",
     tags: ["Next.js", "TypeScript", "Prisma", "Stripe"],
     githubUrl: "https://github.com/vedant-mahalle/swaravishkar",
@@ -21,8 +22,8 @@ const portfolioItems = [
     type: "Sponsored",
   },
   {
-    title: "Vithai Enterprises(Sponser)",
-    description: "A website for a local business that sells a variety of engine products.",
+    title: "Vithai Enterprises",
+    description: "A sponsored website project for a local business selling a variety of engine products. Built with Next.js, React, Tailwind CSS, TypeScript, and Framer Motion. (Sponsored Project)",
     tags: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"],
     githubUrl: "https://github.com/vedant-mahalle/Vithai-Enterprises",
     liveUrl: "https://vithai-enterprises.vercel.app/",
@@ -39,15 +40,16 @@ const portfolioItems = [
     category: "Machine Learning",
     type: "Hobby",
   },
-  // {
-  //   title: "Movie Stremer",
-  //   description: "A responsive movie streaming platform built with Next.js and integrated with TMDB API for movie data.",
-  //   image: "https://placehold.co/600x400/2563eb/ffffff?text=Movie+Stremer",
-  //   tags: ["Next.js", "React", "Tailwind CSS", "TMDB API", "Video.js"],
-  //   githubUrl: "https://github.com/vedant-mahalle/movie-stremer",
-  //   liveUrl: "https://movie-stremer.vercel.app/",
-  //   category: "Web Development",
-  // },
+  {
+    title: "StreamFlix",
+    description: "A technical exploration project demonstrating how torrent protocols work, built with Next.js. This platform simulates peer-to-peer file sharing for educational purposes, focusing on understanding torrent technology, distributed networking, and data transfer mechanisms.",
+    image: "https://placehold.co/600x400/2563eb/ffffff?text=Movie+Stremer",
+    tags: ["Next.js", "React", "Tailwind CSS", "OMDB API", "Torrent Protocol"],
+    githubUrl: "https://github.com/vedant-mahalle/movie-stremer",
+    liveUrl: "https://github.com/vedant-mahalle/movie-stremer",
+    category: "Web Development",
+    type: "Hobby",
+  },
   {
     title: "Food Recommendation System",
     description: "An intelligent system that recommends personalized meal plans based on BMI calculations and nutritional requirements. Built with Flask and machine learning algorithms.",
@@ -92,21 +94,21 @@ export default function PortfolioPage() {
       selectedType === "All"
         ? true
         : selectedType === "Sponsored Projects"
-        ? item.type === "Sponsored"
-        : item.type === "Hobby"
+          ? item.type === "Sponsored"
+          : item.type === "Hobby"
     // Filter by category
     const categoryMatch =
       selectedCategory === "All"
         ? true
         : selectedCategory === "DSA"
-        ? item.category === "DSA" || item.category === "DSA & Algorithms"
-        : item.category === selectedCategory
+          ? item.category === "DSA" || item.category === "DSA & Algorithms"
+          : item.category === selectedCategory
     return typeMatch && categoryMatch
   })
 
   return (
     <div className="min-h-screen pt-20 pb-16">
-      <Navbar/>
+      <Navbar />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
@@ -118,12 +120,12 @@ export default function PortfolioPage() {
         </div>
 
         {/* Project Type Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-6 animate-slide-in-bottom animation-delay-150">
+        <div className="flex flex-col sm:flex-row flex-wrap sm:justify-center gap-2 sm:gap-4 mb-6 overflow-x-auto w-full">
           {projectTypes.map((type) => (
             <Button
               key={type}
               variant={type === selectedType ? "default" : "outline"}
-              className="rounded-full"
+              className="rounded-full whitespace-nowrap"
               onClick={() => setSelectedType(type)}
             >
               {type}
@@ -132,12 +134,12 @@ export default function PortfolioPage() {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12 animate-slide-in-bottom animation-delay-200">
+        <div className="flex flex-col sm:flex-row flex-wrap sm:justify-center gap-2 sm:gap-4 mb-12 overflow-x-auto w-full">
           {categories.map((category) => (
             <Button
               key={category}
               variant={category === selectedCategory ? "default" : "outline"}
-              className="rounded-full"
+              className="rounded-full whitespace-nowrap"
               onClick={() => setSelectedCategory(category)}
             >
               {category}
@@ -209,7 +211,7 @@ export default function PortfolioPage() {
               <div className="text-sm text-muted-foreground">Projects Completed</div>
             </div>
             <div className="animate-bounce-in animation-delay-400">
-              <div className="text-3xl font-bold text-green-500 mb-2">200+</div>
+              <div className="text-3xl font-bold text-green-500 mb-2">300+</div>
               <div className="text-sm text-muted-foreground">GitHub Commits</div>
             </div>
             <div className="animate-bounce-in animation-delay-600">
@@ -221,6 +223,12 @@ export default function PortfolioPage() {
               <div className="text-sm text-muted-foreground">Technologies Mastered</div>
             </div>
           </div>
+          <div className="mt-6 flex justify-center">
+            <div className="w-full max-w-xs sm:max-w-md md:max-w-lg overflow-x-auto">
+              <ContributionCalendar />
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
