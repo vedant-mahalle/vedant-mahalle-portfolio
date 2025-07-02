@@ -82,7 +82,7 @@ const DownloadCV = () => {
   try {
     // Simulate a download link click (better than window.open for some cases)
     const link = document.createElement('a');
-    link.href = './public/vedant-mahalle-CV.pdf';
+    link.href = './public/A_Customised_CurVe_CV.pdf';
     link.download = 'Vedant_Mahalle_Resume.pdf'; // Forces download with a clean filename
     link.target = '_blank'; // Open in new tab if download fails
     link.rel = 'noopener noreferrer'; // Security best practice
@@ -95,7 +95,7 @@ const DownloadCV = () => {
   } catch (error) {
     console.error('Failed to download resume:', error);
     // Fallback: Open in new tab if download fails
-    window.open('./vedant-mahalle-CV.pdf', '_blank');
+    window.open('./A_Customised_CurVe_CV.pdf', '_blank');
   }
 };
 
@@ -144,7 +144,7 @@ export default function AboutPage() {
             </div>
 
             <Button asChild>
-              <Link href="/vedant-mahalle-CV.pdf" target="_blank" rel="noopener noreferrer">
+              <Link href="/A_Customised_CurVe_CV.pdf" target="_blank" rel="noopener noreferrer">
                 <span className="flex items-center">
                   <Download className="w-4 h-4 mr-2" />
                   View Resume
