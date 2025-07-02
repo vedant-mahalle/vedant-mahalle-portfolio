@@ -97,15 +97,9 @@ export default function HomePage() {
                   className="relative z-10 rounded-2xl border-4 border-background shadow-2xl"
                 />
                 
-                <Image
-                  src="https://github-readme-streak-stats.herokuapp.com?user=vedant-mahalle&theme=tokyonight"
-                  alt="GitHub Streak"
-                  width={400}
-                  height={200}
-                  className="rounded-xl border-2 border-border shadow-2xl bg-background"
-                  unoptimized
-                />
-              </div>
+                
+                <a href="https://git.io/streak-stats"><img src="https://github-readme-streak-stats-ashen-five.vercel.app?user=vedant-mahalle&theme=tokyonight&hide_border=true" alt="GitHub Streak" /></a>
+              </div> 
             </div>
           </div>
         </div>
