@@ -22,15 +22,6 @@ const portfolioItems = [
     type: "Sponsored",
   },
   {
-    title: "Vithai Enterprises",
-    description: "A sponsored website project for a local business selling a variety of engine products. Built with Next.js, React, Tailwind CSS, TypeScript, and Framer Motion. (Sponsored Project)",
-    tags: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"],
-    githubUrl: "https://github.com/vedant-mahalle/Vithai-Enterprises",
-    liveUrl: "https://vithai-enterprises.vercel.app/",
-    category: "Web Development",
-    type: "Sponsored",
-  },
-  {
     title: "AI-Powered Chatbot",
     description: "Intelligent customer service chatbot using natural language processing and machine learning.",
     image: "/placeholder.svg?height=300&width=400",
