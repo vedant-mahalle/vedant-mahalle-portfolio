@@ -84,6 +84,8 @@ const portfolioItems = [
 const categories = ["All", "Web Development", "Machine Learning", "Gen AI", "DSA"]
 const projectTypes = ["All", "Sponsored Projects", "Hobby Projects"]
 
+const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+
 export default function PortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [selectedType, setSelectedType] = useState("All")
@@ -120,7 +122,32 @@ export default function PortfolioPage() {
         </div>
 
         {/* Project Type Filter */}
-        <div className="flex flex-col sm:flex-row flex-wrap sm:justify-center gap-2 sm:gap-4 mb-6 overflow-x-auto w-full">
+        <div className="sm:hidden mb-6 w-full flex flex-col items-center">
+          {/* Pyramid: 1 on top, 2 below */}
+          <div className="flex justify-center mb-2 w-full">
+            <Button
+              key={projectTypes[0]}
+              variant={projectTypes[0] === selectedType ? "default" : "outline"}
+              className="rounded-full whitespace-nowrap w-2/3 px-2 py-1 text-xs font-medium border-2 border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-150 shadow-sm"
+              onClick={() => setSelectedType(projectTypes[0])}
+            >
+              {projectTypes[0]}
+            </Button>
+          </div>
+          <div className="flex justify-center gap-2 w-full">
+            {projectTypes.slice(1).map((type) => (
+              <Button
+                key={type}
+                variant={type === selectedType ? "default" : "outline"}
+                className="rounded-full whitespace-nowrap w-1/2 px-2 py-1 text-xs font-medium border-2 border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-150 shadow-sm"
+                onClick={() => setSelectedType(type)}
+              >
+                {type}
+              </Button>
+            ))}
+          </div>
+        </div>
+        <div className="hidden sm:flex flex-col sm:flex-row flex-wrap sm:justify-center gap-2 sm:gap-4 mb-6 overflow-x-auto w-full">
           {projectTypes.map((type) => (
             <Button
               key={type}
@@ -134,7 +161,34 @@ export default function PortfolioPage() {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-col sm:flex-row flex-wrap sm:justify-center gap-2 sm:gap-4 mb-12 overflow-x-auto w-full">
+        <div className="sm:hidden mb-12 w-full flex flex-col items-center">
+          {/* Diamond: 2 on top, 3 below */}
+          <div className="flex justify-center gap-2 mb-2 w-full">
+            {categories.slice(0, 2).map((category) => (
+              <Button
+                key={category}
+                variant={category === selectedCategory ? "default" : "outline"}
+                className="rounded-full whitespace-nowrap w-1/2 px-2 py-1 text-xs font-medium border-2 border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-150 shadow-sm"
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+          <div className="flex justify-center gap-2 w-full">
+            {categories.slice(2).map((category) => (
+              <Button
+                key={category}
+                variant={category === selectedCategory ? "default" : "outline"}
+                className="rounded-full whitespace-nowrap w-1/3 px-2 py-1 text-xs font-medium border-2 border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-150 shadow-sm"
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+        </div>
+        <div className="hidden sm:flex flex-col sm:flex-row flex-wrap sm:justify-center gap-2 sm:gap-4 mb-12 overflow-x-auto w-full">
           {categories.map((category) => (
             <Button
               key={category}
