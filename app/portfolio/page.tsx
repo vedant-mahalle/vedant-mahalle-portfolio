@@ -11,7 +11,7 @@ import { useState } from "react"
 
 const portfolioItems = [
   {
-    title: "Karaok Club",
+    title: "Karoke Club",
     description:
       "A dynamic dashboard application built with Next.js for Swaravishkar Kariok Club in Akola, enabling administrators to control and customize the frontend experience in real time. Features include modular analytics, user management, and seamless integration for live updates, tailored specifically for the company's needs. (Sponsored Project)",
     image: "/placeholder.svg?height=250&width=400",
