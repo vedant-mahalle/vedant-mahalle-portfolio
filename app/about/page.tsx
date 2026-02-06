@@ -144,7 +144,7 @@ export default function AboutPage() {
             </div>
 
             <Button asChild>
-              <Link href="/A_Customised_CurVe_CV.pdf" target="_blank" rel="noopener noreferrer">
+              <Link href="/my-cv.pdf" target="_blank" rel="noopener noreferrer">
                 <span className="flex items-center">
                   <Download className="w-4 h-4 mr-2" />
                   View Resume
